@@ -18,7 +18,7 @@ public class BalencedParenthesis {
 	public static boolean isBalancedParenthesis(String a) {
 		String s = a.replaceAll("[a-zA-Z0-9]","");
 		System.out.println(s);
-		Stack<Character> stack = new Stack<>();
+		Stack<Character> stack = new Stack();
 		if(s.charAt(0) == ')' || s.charAt(0) == '}' || s.charAt(0) == ']')
 			return false;
 		for(int i = 0; i < s.length(); i++) {

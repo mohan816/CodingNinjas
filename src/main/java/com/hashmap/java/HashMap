@@ -1,0 +1,47 @@
+HashMap: It's nothing but key value pair and key can be of any type and value can be of any type. Key must be unique and value can have duplicates.
+
+Few functions and their time complexities:
+In Hash Map many functions are of O(1) time complexity except few namely containsValue(), keySet() and entrySet()(calling this functions will take O(1) but
+iterating this functions will lead to O(n) time complexity.
+
+Functions:
+   1) put(key,value) -> To put the key value pair in the hash map and it's time complexity is O(1)
+   2) get(key) -> to get the value of the key and it's time complexity is O(1)
+   3) containsKey(key) -> To check whether the key is present or not, it's time complexity is O(1) and the return type is boolean.
+   4) containsValue(value) -> To check whether the value is present or not, it has to travel all the values so it's time complexity is O(n)
+   5) keySet() -> Returns set of keys, return type is Set<type> and the time complexity is O(n), because we have to travel entire set , just for 
+      calling this function it will take O(1) time.
+   6) entrySet() -> Returns set of key , value pairs, the return type is Set<Map.Entry<key,value>> and the time complexity is O(n).
+   7) remove(key) -> Removes the key from the map, the time complexity is O(1).
+   
+Difference between time complexities containsKey(key) & containsValue(value)
+1) keys are hashed using hash function, because the internal structure of Hash Map is based on hashing. Once the keys are hashed it will generate the
+hash code, so while performing containsKey() it will check in the bucket whether the code is present or not, for that it will take O(1) time.
+2) But in the containsValue(value), it's not the case because values are not hashed, so it has to go each entry in the hash map, so it will take O(n) time.
+
+Let's learn how hash function work?
+
+Whenever we put the key in the hash map, then the key pass to the hash function and it generate the hash code, 
+then the hash code pass to the compression function, in the compression function simply mod the hash code with the size of bucket array, 
+then the key and value stored in the index position(value after performing mod).
+If in the case of key is Integer the hash code is the key itself and it pass to the compression function then key and value stored in the bucket array.
+If in the case of String, it add the ascii value of all the characters present in the String and that value is the code then it call compression function 
+then same thing happen which we already mentioned above.
+In the case of the String, for an example "abc" and "cba" if we follow the approach then we get the same value for both the String, 
+so what happen it call the base prime, 
+like below, a * (p ^ 2) + b * (p ^ 1) + c * (p ^ 0) then for cba it will be like  c * (p ^ 2) + b * (p ^ 1) + a * (p ^ 0), so here we get different hash code for each Strings.
+Here the cache is, after performing all the operation if we get the same index , then the collision can happen.
+
+Collision Handling:
+-> We can handle collision in two ways 1)Open Addressing 2)Closed Addressing or Closed Hashing or Separate Chaining
+In Open Addressing, It will check the index position is empty or not, if it's empty then it will put the key value pair, else it's have three types of implementation
+  1) Linear Probing -> If the index position is not empty then it will try the next index position, it will do the same until it finds the slot.
+  2) Quadratic probing -> It will check in square, i mean if it's the first try then it will do 1^2, then 2^2, 3^2 it will do the same, until it finds
+  the empty slot.
+  3) Double hashing -> Hashcode * number of try, if it's first try then hashcode * 1, if it's second hashcode * 2 it will continue the same until it finds
+  empty index position.
+  
+  Closed Hashing: Java People implemented the hashmap using separate chaining concept.
+  
+  It's implemented using LinkedList, if the index position is already filled, then it will create the LinkedList and link the nodes one after another.
+   

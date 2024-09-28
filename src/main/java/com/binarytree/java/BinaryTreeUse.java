@@ -11,7 +11,7 @@ public class BinaryTreeUse{
 			System.out.print("Tree is empty");
 			return;
 		}
-		Queue<BinaryTree<Integer>> nodesInQueue = new LinkedList<>();
+		Queue<BinaryTree<Integer>> nodesInQueue = new LinkedList<BinaryTree<Integer>>();
 		nodesInQueue.offer(root);
 		while(!nodesInQueue.isEmpty()) {
 			BinaryTree<Integer> front = nodesInQueue.poll();
@@ -34,7 +34,7 @@ public class BinaryTreeUse{
 		int rootData = sc.nextInt();
 		if(rootData == -1)
 			return null;
-		Queue<BinaryTree<Integer>> pendingChildren = new LinkedList<>();
+		Queue<BinaryTree<Integer>> pendingChildren = new LinkedList<BinaryTree<Integer>>();
 		BinaryTree<Integer> rootNode = new BinaryTree<Integer>(rootData);
 		pendingChildren.add(rootNode);
 
@@ -43,14 +43,14 @@ public class BinaryTreeUse{
 			System.out.println("Enter the left node data of "+front.data);
 			int leftNodeData = sc.nextInt();
 			if(leftNodeData != -1) {
-				BinaryTree<Integer> nodeLeft = new BinaryTree<>(leftNodeData);
+				BinaryTree<Integer> nodeLeft = new BinaryTree<Integer>(leftNodeData);
 				front.left = nodeLeft;
 				pendingChildren.add(nodeLeft);
 			}
 			System.out.println("Enter the right node data of "+front.data);
 			int rightNodeData = sc.nextInt();
 			if(rightNodeData != -1) {
-				BinaryTree<Integer> nodeRight = new BinaryTree<>(rightNodeData);
+				BinaryTree<Integer> nodeRight = new BinaryTree<Integer>(rightNodeData);
 				front.right = nodeRight;
 				pendingChildren.add(nodeRight);
 			}
@@ -71,7 +71,7 @@ public class BinaryTreeUse{
 		int rootData = sc.nextInt();
 		if(rootData == -1)
 			return null;
-		BinaryTree<Integer> node = new BinaryTree<>(rootData);
+		BinaryTree<Integer> node = new BinaryTree<Integer>(rootData);
 		BinaryTree<Integer> leftNode = takeInput(false,rootData, true);
 		BinaryTree<Integer> rightNode = takeInput(false, rootData, false);
 		node.left = leftNode;
