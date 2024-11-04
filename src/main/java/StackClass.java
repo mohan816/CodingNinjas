@@ -1,11 +1,12 @@
-import com.stacks.java.StackUsingArrays;
+import com.stacks.java.ImplementStackUsingArrays;
+import com.stacks.java.StackEmptyException;
 
 public class StackClass {
 
-	public static void main(String[] args) {
-		StackUsingArrays sa = new StackUsingArrays();
+	public static void main(String[] args) throws StackEmptyException {
+		ImplementStackUsingArrays sa = new ImplementStackUsingArrays(0);
 		sa.push(10);
-		int top = sa.top();
+		int top = sa.pop();
 		System.out.println(top);
 		System.out.println(sa.size());
 		sa.pop();

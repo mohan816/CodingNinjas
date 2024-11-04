@@ -1,0 +1,13 @@
+Stacks:
+
+It is an abstract data type, here we don't dig much how the data is stored instead we just use it's feature.
+It's behaviour is LIFO which means Last In First Out. In programming stack is used in Recursion, when each function call's stored in the memory
+area called call stack. Here the last called function will comes out of the call stack at first and the same will continue for others as well.
+
+Basic Operations in Stack:
+1) push() -> Insert an element in the stack
+2) pop() -> Removes an element in the stack and return it.
+3) peek() -> Return the top most element of the stack.
+4) size() - > Returns the size of stack
+5) isEmpty() -> It returns true if the stack is empty and returns false if the stack is not empty.
+

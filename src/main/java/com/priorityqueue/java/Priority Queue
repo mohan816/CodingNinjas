@@ -1,0 +1,87 @@
+Priority Queue:
+
+      We insert an element in the queue with priority, and we remove an element in the priority queue based on Min-Priority or Max-Priority.
+EX:
+     if the flight is filled and passengers are in waiting list. If some seats are got empty then we have to fill those seats with the passengers in the
+     waiting list based on priority. This priority may be depends on age, VIP factor or First come first out(FIFO).
+     
+Min-Priority:
+     We remove an element in the queue based on lowest priority.
+Max-Priority:
+     We remove an element in the queue based on highest priority.
+     
+Functions:
+insert() -> Insert an element
+getMax() -> Retriving an element with max priority.
+getMin() -> Retriving an element with min priority.
+removeMin() -> Remove an element with least priority.
+removeMax() -> Remove an element with max priority.
+
+Implementation of Priority Queue (Based on below data structures)
+
+Arrays/ArrayList: Unsorted
+insert() -> O(1)
+getMin() -> O(n)
+removeMin() -> O(n)
+
+Arrays/ArrayList: sorted
+insert() -> O(n)
+getMin() -> O(1)
+removeMin() -> O(n)
+
+Sorted LinkedList:
+insert() -> O(n)
+getMin() -> O(1)
+removeMin() -> O(1)
+
+BST:
+insert() -> O(height)
+getMin() -> O(height)
+removeMin() -> O(height)
+
+Balanced BST:
+insert() -> O(logn)
+getMin() -> O(logn)
+removeMin() -> O(logn)
+
+HashMap:
+insert() -> O(1)
+getMin() -> O(n)
+removeMin() -> O(n)
+
+We are going to implement Priority Queue using Heap Data Structure. We are choosing heap because it's easy to implement and the time
+complexity for all the above operations are O(logn). Heap follows two properties
+1) Complete Binary Tree(CBT)
+2) Heap Property Value
+
+What is Complete Binary Tree?
+1) All the levels must be balanced except the last level. It means each node must have left and right node.
+2) We must insert an element from left to right.
+3) We must remove an element from right to left.
+
+Heap Property value:
+1) Min Heap - root node must be lesser than it's left and right, it has to be applicable for all the levels.
+2) Max Heap - root node must be greater than it's left and right childs, it has to be applicable for all the levels.
+
+Formulas to find the parent and child positions:
+1) parent = (childIndex - 1)/2
+2) leftchild = 2 * parentIndex + 1, rightChild = 2 * parentIndex + 2.
+
+We are going to implement heap data structure using ArrayList but for the visualization we always think about Binary Tree.
+
+insert() -> min heap
+Once insert an element at the last position, then we have to compare with it's parent, if the parent is lesser than exit from the tree
+else swap the parent and current node. Vice versa for max (parent must be greater than left and right).
+
+remove() -> min heap
+To remove the min element, first remove the 0th index value, and move the last index value to zero position, then remove the last index value.
+Now we have to ensure parent must be lesser than it's child.
+
+
+
+
+
+
+
+     
+     

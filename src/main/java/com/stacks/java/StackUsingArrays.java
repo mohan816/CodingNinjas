@@ -2,64 +2,29 @@ package com.stacks.java;
 
 public class StackUsingArrays {
 
-	private int[] data;
-	private int top;
-
-	public StackUsingArrays() {
-		data = new int[10];
-		top = -1;
-	}
-
-	public void push(int element) {
-        for(int i = 0; i < data.length; i++) {
-        	if(data[i] != 0) {
-        		continue;
-        	}
-        	else {
-        		data[i] = element;
-        		break;
-        	}
-        }
-	}
-	public int top() {
-		for(int i = data.length -1; i >= 0; i--) {
-			if(data[i] != 0) {
-				return data[i];
-			}
-			else {
-				continue;
-			}
-		}
+	public static void main(String[] args) throws StackEmptyException {
+		// TODO Auto-generated method stub
 		
-		return top;
-		}
-	public int pop() {
-		for(int i = data.length -1; i >= 0; i--) {
-			if(data[i] != 0) {
-				int topElement = data[i];
-				data[i] = 0;
-				return topElement;
-			}
-			else {
-				continue;
-			}
-		}
-		return -1;
+		ImplementStackUsingArrays stack = new ImplementStackUsingArrays(5);
+		//System.out.println("The peek element of the stack is "+stack.peek());
+		stack.push(1);
+		stack.push(2);
+		stack.push(3);
+		stack.push(4);
+		stack.push(5);
+		System.out.println("The size of stack is "+stack.size());
+		stack.push(6);
+		stack.push(7);
+		System.out.println("The size of stack is "+stack.size());
+		System.out.println("The peek element of the stack is "+stack.peek());
+		System.out.println("Removing top most element of the stack "+stack.pop());
+		System.out.println("Removing top most element of the stack "+stack.pop());
+		System.out.println("Removing top most element of the stack "+stack.pop());
+		System.out.println("Removing top most element of the stack "+stack.pop());
+		System.out.println("The size of stack is "+stack.size());
+		System.out.println("The peek element of the stack is "+stack.peek());
+		System.out.println("Checking stack is empty or not "+stack.isEmpty());
+		
 	}
-	public int size() {
-		int count = 0;
-		for(int i = 0; i < data.length; i++) {
-			if(data[i] != 0) {
-				count = count + 1;
-				continue;
-				}
-		}
-		return count;
-	}
-	public boolean isEmpty() {
-		if(data.length == 0) {
-			return true;
-		}
-		return false;
-	}
+
 }
