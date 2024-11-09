@@ -1,0 +1,55 @@
+System Calls:
+
+It act as interface between the user space and kernel. Command Line Interface are present in the User Space, if run mkdir Mohan command from 
+command Prompt, then the system call will be created and it connects to the file management of Kernel and it create the Mohan folder.
+
+Different Categories of System calls:
+1) Process Control, File Management, Device Management, Information Management, Communication Management.
+
+Process Control or Process Management:
+Once we run the program in the system, a process will be created and id is allocated to the process. the name of the ID is PID.
+
+1) Different functions in the process control:
+   1) fork(): It will create the new process
+   2) exit(): It will terminate the already existing process
+   3) wait(): If there are two process, then what it will do it waits for child process to complete then it will pick parent process.
+   4) exec(): It won't change the PID but the content of code will be changed completely.
+   5) kill(): It is used to kill the process abruptly, which means in the exit() it will terminate the process along with deallocate the memory
+              but if we run the kill command then it won't deallocate memory instead it will terminate abruptly.
+              
+Example for Kill command: We are having the PID of 3851, we can perform below actions using kill command.
+kill 3851 -> Properly terminates the running the process
+kill -9 3851 -> Abruptly terminates the running process
+kill -2 3851 -> Passes a keyboard interrupt to the running process
+kill -l -> Lists all the available signals that can be passed to kill command.
+   
+Note: System calls are implemented in C.Linux provides wrapper to functions which are implemented in c
+
+2) File Management:
+System calls():
+open() -> To open the file
+read() -> To read the file
+write() -> To write on the file
+close() -> To close the file
+create() -> To create the file.
+
+What is file: A file is piece of data than can be stored in the disk.
+To open the file : cat filename(open, read calls will be called)
+To change the ownership of file: chown mohan filename
+To change read/write access of the file: chmod -w filename
+
+3) Device Management:
+    Device management system calls provides system calls to access the devices like CPU, Keybord, Mouse, USB drive, memory
+    read(), attach(), detach()
+    
+4) Information Management: OS stores lot of information, information management systems calls are used to fetch below details.
+    * Date & time
+    * free space on the disk
+    * allocated and free memory
+    * os version
+    * process -> pid & ppid
+   few functions used: getPid(), getPPid()
+   
+5) Communication management:
+  pipe(), shm-open(), mmap()
+    

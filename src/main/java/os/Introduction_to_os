@@ -1,0 +1,110 @@
+Problem Statement: Copying the content from one file to another file, OS plays any role here?
+    
+    Yes, Operating Systems plays a major role here, When we are copying the contents of one file to another, then we are writing on a Storage disk
+    operating system takes care of this.
+    
+ Operating System: An operating system (OS) is a collection of software functions that is responsible for the management of computer hardware, 
+ software resources, and also provides common services for computer programs.
+ It act as an interface between the apps and the hardware components, which means it hide's the complexities of the 
+ hardware and act as a resource manager. Because of OS app's uses the hardware components without any disturbances.
+                   
+The example of the manager and the restaurant is made analogous to the operating system and computer system. Users are correctly mapped to customers, 
+Waiters are correctly mapped to applications and the manager of the restaurant is mapped to the operating system.
+Using this information we can derive the following:\
+
+CPU:
+1. CPU or Central Processing unit of the system works as the processing unit which transforms raw data (Input) into the processed data(Output), 
+it seems like a function  of the Chef in the restaurant as the chef converts raw ingredients to incredible dishes.
+
+RAM:
+2. Main memory or RAM is a device or system that is used to store information for immediate use in a computer or 
+related computer hardware and digital electronic devices. The CPU processes the data which is stored in Main Memory or RAM. 
+It should be matched with the countertop as the food or raw material is placed at the countertop by the chef while  making dishes.
+
+Hard Disk:
+3. The Hard Disk stores all the data whether it is in execution or not. This should be matched with the cupboard because in the kitchen 
+all the things are stored in the Cupboard.
+
+Abstraction: Hiding the complexity of the hardware.
+Arbitration: Resource Management.
+
+Operating System is a piece of code that performs both Abstraction and Arbitration in the Computer System.
+
+Definition of OS: It is a piece of code
+ * having the privilege to access the computer hardware
+ * It hides the underlying complexities of the hardwares
+ * It act as a resource manager
+ * It gives the protection and the isolation to the apps
+ * It act as a interface between the applications and the hardware components.
+ 
+ Different Types of OS:
+ 1) Desktop OS:
+     * windows
+     * linux
+     * Mac OS
+2) Mobile OS:
+     * Android OS
+     * IOS 
+     
+Components of OS:
+    1) User Space -> Where the application runs (Example GUI, Command Line Arguments(CLI), Software Programs)
+    2) Kernel -> It is the heart of OS, It does all the jobs, example: If the application wants to access the hardware components Kernel only helps
+                 to do it.
+                 
+ Below are the parts of the Kernel:
+      1) Process Manager: When we run a program or an application the process will be created, the process Manager will manage how long the program
+                          should run, in which order it has to run and how much resource it consume.
+      2) File Manager: If we create the file, update the file, delete the file etc. Everything will be monitored by File manager
+      3) I/O Manager : It manages the external systems ex: Keyboard, Mouse, Monitor etc
+      4) Memory Manager:It makes sure application have the enough memory to run and also it optimize the memory.
+
+Different types of the Kernel:
+
+1) Monolithic Kernel
+     All the managements are present in the Kernel, I mean Process, Memory, File Manager and I/O management. It's a single piece of code
+     so the memory consumed by this kernel is more, If some crashes happened in any of the management it will crash the Kernel and if the
+     Kernel is crashed it means entire OS is crashed.
+     
+     Advantage is Communication between the managements are faster because everything is present inside the Kernel itself.
+     
+     This Kernel is there in Linux Machines.
+     
+2) Micro Kernel
+     File management and I/O management is present inside the UserSpace, Process and Memory Management is present inside the Kernel.
+     It means the memory consumed by the kernel is less when compared to monolithic, and the separate module is maintained for all
+     the managements, If any one of the module crashed it won't impact others. So the kernel won't be crashed and also the OS.
+     
+     The disadvantage is IPC call will be more because few managements are present in the User space like other applications, So if it wants to communicate
+     with the hardware components then it has to communicate with Kernel. So the IPC calls will be more. IPC stands for inter process communication.
+     The performance is less when compared to monolithic.
+     
+     This kernel is Used in L4Linux, Symbian OS(This os is used in OLD Nokia Phones).
+     
+     
+3) Hybrid Kernel
+     File Management is there in the User Space and I/O, process and memory management all are present in the Kernel. It not a single piece of code
+     all the managements are separate module. So the debugging will be easy if something went's wrong in any of the modules. And the Crashing of OS wont
+     happen.
+     
+     Less memory consumption when compared to Monolithic and communication will be faster when compared to Micro Kernel.
+     
+     Windows using this kind of Kernel and also Mac OS
+     
+4) Nano Kernel
+5) Exo Kernel
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+                   

@@ -1,0 +1,8 @@
+To find who is the logged in user: whoami
+To see the number of process running: ps
+To get the details of all the running process: ps -ef
+To filter the process which are running on the root account: ps -ef | grep root
+To get the proces id of the terminal: echo $$
+The program which uses the process Id of the terminal: ps -ef | grep terminalProcessId
+
+

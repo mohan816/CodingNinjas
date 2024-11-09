@@ -1,0 +1,11 @@
+It is a abstract data structure like Stack, Which means we won't focus much on the implementation we just use it's functions.
+
+Queue is an interface, if we need to create an object then we have to use LinkedList.
+
+Below are the some important functions:
+1) offer() -> To insert an element to the queue
+2) poll() -> To remove an element and it return the element, if element is not there then it will return null.
+3) peek() -> It will return the first element of the queue, if element is not there then it will return null.
+4) size() -> It will return the size of a queue.
+5) isEmpty() -> Return ture if the queue is empty else it will return false.
+
