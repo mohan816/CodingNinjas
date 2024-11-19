@@ -4,5 +4,23 @@ To get the details of all the running process: ps -ef
 To filter the process which are running on the root account: ps -ef | grep root
 To get the proces id of the terminal: echo $$
 The program which uses the process Id of the terminal: ps -ef | grep terminalProcessId
+If we want to replace the program which uses the process id of the terminal: exec sleep 300 (it will replace the prev prgrm into new prgrm sleep)
+
+date:
+   to find the date and time of the system
+df:
+   To find the free space on the disk
+free:
+   It is the command to find the allocated and free memory.
+
+cat filename
+    Used to see the content of the filename
+cat filename1 filename2
+    Used to see the content of both the files
+cat -n filename1
+   Used to see the content from specified file onwards
+cat filename1 >> filename2
+   Used to copy the contents of one file to another file
+
 
 

@@ -1,0 +1,51 @@
+Process:
+    We can say process is a program under execution or the unit of work done by the computer system.
+    
+ We can perform multiple process execution simultaneously even though we have single CPU. One CPU perform Single process at a time.
+ With the help of OS we can achieve process execution simultaneously. The concept is called time sharing. It will execute one process in the cpu
+ and stops it's and execute other process and stops it. Like that it can execute multiple process simultaneously.
+ 
+ CPU Virtualization: One CPU act as a multiple CPU
+ 
+ How Process is Created: When we run the program?
+ 1) It will load the program and static data initialization
+ 2) Allocate runtime stack memory, It will store local variable, function parameters and the return value
+ 3) Allocate heap memory, It will store objects and the dynamically allocated variables.
+ 4) Tasks related to I/O.
+ 5) It will call main function, Now the control of CPU goes to the program.
+ 
+ Process Architecture:
+ 
+ text -> It will have the compiled code in the main memory.
+ data -> Static data's
+ heap -> dynamically allocated variable values
+ 
+ stack -> local variables, function parameters, return values
+ 
+ there will be the space between the stack and heap memory, Once the stack and heap met then it will throw stack overflow exception.
+ If the program requests more memory then we will get memory insufficient error.
+ 
+ Problem Statement:
+ The need for multiprogramming arises, in order to better utilize the CPU and increase the percentage of its utilization. 
+ Let's appreciate the increase in CPU utilization with the help of a problem.
+ Problem:
+ In a system using a single processor, there are six processes in the ready queue and each process will take seven seconds of 
+ CPU time to be complete its task. Assume that all the processes complete their tasks. 
+ Given the above information, find the percentage of CPU utilization in a minute?
+ 
+ Solution: CPU utilization in a minute
+           CPU utilization = (6 * 7) / 60 * 100 = 70
+           
+ Operating System will store the details about the each running process, the details of each process will be
+ stored in process table and the each block in the process table are called process control block.
+ 
+ Below are the each blocks in the process table:
+ Process ID -> It will store the unique process ID
+ Program Counter -> It will store the address of the next instruction 
+ Process state -> State of the process
+ Priority ->> Storing Priority of Process
+ General Purpose Registers -> Data Variables
+ List of Open Files -> Open files
+ List of Open Devices -> open I/O devices
+
+ 

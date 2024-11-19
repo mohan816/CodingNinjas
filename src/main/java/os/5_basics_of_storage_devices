@@ -1,0 +1,7 @@
+Primary Memory: It's also called volatile memory, which means the data will be erased.
+   1) Register 2) Cache 3) Main Memory(RAM)
+   
+Secondary Memory: It's a non volatile memory, data won't be erased.
+  Electronic disk, magnetic disk, optical disk and magnetic field.
+  
+  When we create a file it will be stored in the secondary memory and when we execute it loads in the main memory and the process will be created.

@@ -1,0 +1,23 @@
+First Understand degree of Multi-Programming:
+If the process are more in main memory then we can say degree of Multi-Programming is high else say we can say it's low.
+
+Different types of Schedulers:
+1) Long Term Scheduler(LTS)
+2) Short Term Scheduler(STS)
+3) Medium Term Scheduler(MTS)
+
+Long Term Scheduler:
+ It is responsible to change the process from new state to ready state. And it's happening in the job queue, so we can also call it
+ Job Scheduler. The degree of multi-programming is high when compared  to other two schedulers. Because it will move the process from 
+ Secondary memory to Main Memory.
+ 
+ Short Term Scheduler:
+ It is responsible to dispatch the process from Ready state to CPU. We can also call it as CPU Scheduler. At a time only one process will
+ be executed. And the degree of multi programming is less when compared to LTS and high when compared to MTS.
+ 
+ Medium Term Scheduler:
+ It's responsible to move the process from Running state to Waiting state. Once the process is moved from running state to Waiting state which
+ means main memory to Secondary Memory. It's also called Process Switching Scheduler. The degree of multi programming is low when compared to
+ other two Schedulers.
+ 
+ 

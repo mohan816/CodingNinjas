@@ -1,0 +1,13 @@
+Policy: Set of rules or plan
+Mechanism: It is a method that we follow to fulfill the policy.
+
+Elements of OS: Abstraction, Policy, Mechanism
+
+OS Principles:
+
+1) Mechanism and policy should be separated
+     Many applications should support single mechanism and this mechanism should support multiple policies. 
+2) Common use cases: Like who all are the users, how much load it will handle and the what kind of applications will use this OS
+3) Operating system should be macro manage not micro manage:
+    Operation system should be used whenever it's and not for everything
+   

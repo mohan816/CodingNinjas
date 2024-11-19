@@ -1,0 +1,53 @@
+Turn Around Time:
+   The time duration between the terminated state and ready state (this is taken from first time process enters the ready state).
+
+Wait Time:
+   The time process spends waiting for the CPU
+
+Response Time:
+   The time duration between process getting into ready queue and process getting CPU for the first time.
+   
+   
+First Come First Serve Algorithm: FCFS
+                In this algorithm, the process which comes to ready state at first that will dispatch to the CPU. Because of
+this approach we face the problems like Convoy Effect or Starving.
+   
+How can we calculate turn around time and waiting time?
+
+TurnAroundTime = FinishTime - ArrivalTime
+WaitTime = TurnAroundTime - BurstTime
+
+Process ID    ||     Arrival Time ||  Burst Time
+P1                   5                  4
+p2                   0                  3
+p3                   1                  2
+p4                   7                  1
+p5                   4                  6
+
+Solution
+  Process ID      Finish Time      TurnAroundTime     WaitTime
+  p0                3                 3                   0
+  p3                5                 4                   2
+  p5                11                7                   1
+  p1                15                10                  6
+  p4                16                9                   8                
+   
+Convoy Effect:
+Convoy Effect is nothing but if the multiple process are in the ready state, and one process is dispatched to the running state 
+and it's taking long time to complete it because of this other process becomes idle. This concept is called convoy effect or Starving.
+
+Shortest Job First Algorithm:
+ In this algorithm the process with less burst time will execute at first. In order to resolve the problem of starvation, but actually this
+ algorithm will also wont solve the problem.
+ 
+ For an example at the 0th arrival time the process with 100 burst time comes at first in the ready and no other process are there in the ready
+ queue, so this process dispatched to the cpu and it started to execute for 100 seconds. Now some other process comes at 10th arrival time
+ and the burst time of those process are 5, this process has less burst time but still it has to wait for process which is running on the
+ CPU to complete. So in this algorithm also the starvation is there.
+ 
+ 
+ 
+ 
+ 
+ 
+

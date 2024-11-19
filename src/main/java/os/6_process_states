@@ -1,0 +1,24 @@
+Process States:
+1) New -> When an OS about to pick a file and load it in the main memory
+2) Ready -> When the file is Main Memory then it will be in the Ready state
+3) Running -> When the CPU is picked the process to run then it will be in the Running state
+4) Terminated -> When the process completes it's execution then it will be terminated
+5) Wait/block -> If the process is in running state it looks for input from user then it state changed to Wait/block
+6) Suspend Wait -> If the process in wait state and there is no free space and the process with high priority comes then state will be changed to Suspend Wait.
+7) Suspend Ready -> If the process in Ready state and there is no free space in the main memory and the process with high priotity comes then the state of 
+   current process will be changed to Suspend Ready.
+   
+   Suspend Wait and Suspend Ready state will change to Ready -> running -> terminate.
+   
+   Running -> Terminate or Running -> Wait/Block or Running -> Ready
+   Wait/Block -> Suspend Wait or Wait/Block -> Ready
+   SuspendWait -> Wait/Block or SuspendWait -> SuspendReady
+   Ready -> Running or Ready -> SuspendReady
+   SuspendReady -> Ready
+   New -> Ready
+   
+   Three types of Queue data structures are used in Process states
+    1) Job Queue -> Process in the New state will be present in the Job Queue
+    2) Ready Queue -> Process in the Ready state will be present in the Ready Queue
+    3) Wait Queue -> Process in the Wait state will be present in the Wait Queue
+   
