@@ -1,0 +1,68 @@
+Memory Management:
+  In the legacy computers, only one process will be executed in the CPU, and other processes has to wait for the existing process to complete's
+  it's execution then only other process will be executed. If the process in the running state has to perform some I/O operations then the CPU
+  memory will be free but other process won't execute. And also multiprogramming is not there.
+  
+  So the first change they did is context switching, which means once the process in the running state has to perform I/O then they moved
+  the process from running state to wait state and the process in the ready queue use the CPU and executes. This concept is called Context
+  Switching.
+  
+  After implementing context switching, they faced the problem of Starvation which means processes has to wait in the ready queue until the process
+  in the running state to complete the execution. So they came with idea of time sharing which means one process has to execute for some time
+  and goes to paused state then the other process will follow the same approach. What they did once the process has executed till the time sharing
+  time then they moved it to disk(Secondary Memory) then the other process uses CPU and then after the time limit it moved to disk 
+  and process already there in the disk moved to CPU. Because of this approach they faced the slowness.
+  
+  So what they did, instead of moving it to secondary memory, they just maintained it in the primary memory or main memory. Here they faced
+  the challenge of Isolation and protection of the process. 
+  
+  
+  
+  Whenever the process is created two types of memory are allocated, namely 
+  1) Stack Memory
+  2) Heap Memory
+  
+  This memory is called virtual memory.
+  
+  Stack Memory:
+  -> It is used for storing function arguments, local variables and the return types.
+  -> In stack the memory is allocated as contiguous block.
+  -> In stack the memory is deallocated as soon as the return statement executed
+  
+  Heap Memory:
+  -> It is used to store dynamically allocated data structures such as Linked Lists, Stacks, Arrays etc. It is user managed memory which means
+  programmer is responsible to allocate and deallocate the memory. If he forgot to deallocate then the memory leakage will occur.
+  -> In Heap the memory is allocated in random order
+  
+  The process of converting virtual memory address into Physical memory is called Address Translation. And it is done by base and bounce technique
+  and also it's called as Memory Management Unit. Whenever each instructions executed it checks base and bounce range, if the address of the
+  instructions are higher than it throws Out of bound error.
+  
+  The reason for having Virtual memory is it gives protection to the process and it ensures processes are isolated and protected from each other.
+  The processes are won't assigned directly to the physical memory, first it assigned to Virtual memory then to Physical Memory.
+  
+  Function of base registers:
+     Base registers gives base address to the virtual address to translate it to a Physical address.
+     
+ Memory Allocation Methods:
+ 1) Fixed Partitioning:
+      In this method, Physical memory is partitioned by OS(For an example: After OS occupied, the remaining memory is partitioned into equal size. If
+      12mb size is remaining then 4mb will be partitioned. If the process size is 2mb then the remaining 2mb will be wasted other processes won't
+      occupy this memory. This wastage is called internal fragmentation.   
+      
+      And multiprogramming is fixed, because per unit time it will allow only 4 processes. And also it causes external fragmentation which means
+      even the spaces are available and but not able to accommodate because the spaces are not in contiguous.
+      
+ 2) Dynamic Partitioning:
+     In this method, once the process requests the memory then OS creates the partitioning. Internal Fragmentation and Fixed multiprogramming are
+     not there but external fragmentation occurs in this approach.
+     
+  
+      
+      
+     
+ 
+  
+  
+  
+  

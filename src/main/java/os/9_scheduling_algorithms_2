@@ -1,0 +1,45 @@
+Round Robin Scheduling Algorithm:
+   It is the preemptive version of FCFS, In this algorithm it has the time quantum and each process will be executed based on the time quantum.
+   
+   For an example, If the process in the ready queue have lesser burst time then time quantum, then this process will execute till it goes
+   to terminate state. Then it will pick the process which comes at first and will execute till the time quantum sec's then it moved back to
+   the ready queue and other process will execute now and it will continue the same till all the process execute. Then again it will pick the process
+   which are there in the ready queue and execute's till time quantum time and it goes on till all the process moved to terminate state.
+   
+When comes to Round Robin and Preemptive SJF, If we are looking for better turn around time then we have to go for Preemptive SJF and for better
+response time then we have to go for RR.
+
+How to calculate the efficiency of an algorithm?
+
+Efficiency = (burstTime / totalTime(Time taken to finish all the process, note: not the sum of the finish time of all the process, only
+  the last finish time not the sum) * 100
+
+
+MultiLevel Queue Scheduling Algorithm:
+
+Three process are there in this algorithm
+  1) System Process -> Created by OS and it's having higher priority.
+  2) Interactive Process -> Expecting the input from the users and it's having medium priority. Also known as foreground process
+  3) Batch Process -> This process will execute in the background and it's having low priority when compared to other two process. Also known
+     as non-interactive process and Background process.
+  
+Two methods in this algorithm
+  1) Fixed Priority Preemptive Scheduling  -> In this method the processes in the ready queue will group into different process(Ex-> Few processes
+     grouped into System Process and other few grouped into Interactive Process and remaining grouped into batch process)
+     
+     -> Once all the process in the System process executed successfully, then process in the interactive and the processes in the batch will
+        complete it's execution.
+        
+  2) Scheduling based on time slice or time quantum.
+      It's follow the above approach but the noted one here each process will execute for the quantum time and stop and pick the other process it
+      continue the same approach till all the processes executed.
+      
+      Once the processes are completed the execution, then it will pick the processes in the other process(I mean interactive or batch process).
+      Suppose during the execution of interactive some new process arrives in System process then it stopped the execution of interactive and
+      pick the process which arrived in the System.(Because processes which are there in the system having the higher priority).
+      
+ Multilevel Feedback Queue Scheduling Algorithm:
+ 
+    It works similar to MultiLevel Queue Scheduling Algorithm, the difference here it have only two queue's namely high and low priority queues 
+    and queue's will have different time Quantum, suppose the process won't execute fully within the first queue then it moves to second and so on
+    till it's completes the execution successfully.

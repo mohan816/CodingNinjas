@@ -26,7 +26,7 @@ p5                   4                  6
 
 Solution
   Process ID      Finish Time      TurnAroundTime     WaitTime
-  p0                3                 3                   0
+  p2                3                 3                   0
   p3                5                 4                   2
   p5                11                7                   1
   p1                15                10                  6
@@ -44,6 +44,23 @@ Shortest Job First Algorithm:
  queue, so this process dispatched to the cpu and it started to execute for 100 seconds. Now some other process comes at 10th arrival time
  and the burst time of those process are 5, this process has less burst time but still it has to wait for process which is running on the
  CPU to complete. So in this algorithm also the starvation is there.
+ 
+ In two ways it picks the process from ready queue to running queue, 1) Once the process in the running queue terminates 2) the process in
+ the running queue moved to wait state.
+ 
+ Pre-emptive SJF: In this process it will check the burst time of each process in the ready queue in each second. If the process came to the
+ ready queue and it has less burst time then the process which is in execution state, then OS will move the running process to the ready queue
+ and it dispatched newly arrived process in the ready queue which has less burst time to execute in the CPU.
+ 
+ In the algorithm, it stops the running process and moved it back to ready queue and the other process which is having the less burst time 
+ will dispatched to the running queue and once this process terminates and again it will pick the other process which was already executed
+ for sometime by CPU.
+ 
+ In this process we can completely avoid the starvation or convoy effect.
+ 
+ Note: In this algorithm, It picks the process in the ready queue to running queue in two ways. 1) Once the process moved from running to
+ ready or waiting to ready.
+ 
  
  
  
