@@ -47,7 +47,7 @@ Memory Management:
  Memory Allocation Methods:
  1) Fixed Partitioning:
       In this method, Physical memory is partitioned by OS(For an example: After OS occupied, the remaining memory is partitioned into equal size. If
-      12mb size is remaining then 4mb will be partitioned. If the process size is 2mb then the remaining 2mb will be wasted other processes won't
+      12mb size is remaining then 4mb each will be partitioned. If the process size is 2mb then the remaining 2mb will be wasted other processes won't
       occupy this memory. This wastage is called internal fragmentation.   
       
       And multiprogramming is fixed, because per unit time it will allow only 4 processes. And also it causes external fragmentation which means
@@ -55,7 +55,15 @@ Memory Management:
       
  2) Dynamic Partitioning:
      In this method, once the process requests the memory then OS creates the partitioning. Internal Fragmentation and Fixed multiprogramming are
-     not there but external fragmentation occurs in this approach.
+     not there but external fragmentation occurs in this approach. External fragmentation occurs suppose some process terminates and 
+     the process occupied memory are free now but those memory are not contiguous and the new process required some memory and 
+     those memory are available but not in contiguous.
+     
+ What is External Fragmentation?
+ External fragmentation is a memory management issue that occurs when there is enough memory in total, but it's not contiguous and can't be allocated to a process. 
+ This can lead to allocation failures, even though there is enough total memory
+ 
+ 
      
   
       

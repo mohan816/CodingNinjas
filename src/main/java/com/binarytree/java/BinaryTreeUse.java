@@ -119,6 +119,7 @@ public class BinaryTreeUse{
 
 	public static void main(String[] args) {
 		BinaryTree<Integer> root = takeInput(true, 0, false);
+		System.out.println(getSum(root));
 //		BinaryTree<Integer> root = takeInputLevelWise();
 //		printTreeLevelWise(root);
 //		System.out.println("Number of nodes "+ countNodes(root));

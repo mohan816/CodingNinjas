@@ -1,0 +1,31 @@
+The Persistent storage in our system is Disk, there are two types Disk
+    1) Magnetic Disk or HDD
+    2) Non Magnetic Disk or SDD
+
+How Magnetic Disk Works:
+1) The rotating Magnetic Surface is Platter.
+2) The mechanical arm where read and write head attached.
+3) The mechanical arm along with read and write moves around the platter, and it's reads and writes the data stored on the platter.
+4) The platter attached with the spindle and this spindle rotates with the speed of 5400 to 7200 rpm.
+
+The data's organized in the magnetic disk using tracks, sectors and Cylinders.
+-> Platter is divided into several circular discussions, this circular sections are called tracker.
+-> Track is further divided into sectors, where data's are stored. Each read and write operations are performed on sectors. The smallest unit
+   in HDD is called Sector. Usually the size of sector is 512 bytes, sudo fdisk -l | grep "Sector Size" (command to find Sector Size)
+-> A straight line of track at one arm rotation is called Cylinder.
+-> The time taken by the read and write head to move from one track to another is seek time.
+
+Seek time determines the performance of OS operations on the disk.
+
+SSD:
+   It doesn't use any mechanical part like Magnetic Disk.
+   It used NAND based flash memory to read and write on the disk
+   Speed of SSD is generally faster than HDD because it doesn't use any mechanical part, it's 10 times faster than HDD.
+   
+ How SSD works:
+ 1) The smallest unit is called pages
+ 2) The size of page is 4kb, usually 128 pages combine together to from blocks. Data's are stored in the form of blocks in both SSD and HDD.
+ 3) The size of each block is 128 * 4, every time read and write operations performs on the size of 516kb(128 * 4).
+ 
+ 
+ 

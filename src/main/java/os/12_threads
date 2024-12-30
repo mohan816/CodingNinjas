@@ -1,0 +1,68 @@
+Program, Process and Threads:
+   -> Program is stored in Secondary Memory and the process is stored in Main Memory and the threads are part of Process so it also stored
+      in Main Memory.
+   -> A program can have multiple process and the process can have multiple threads but the thread can belong to exactly one process.
+   
+Note: Allocation of stack space is different in process and threads, separate stack is allocated to each threads which means number of
+      stacks is equal to number of threads, but it's not same for heap memory.
+   
+In a single CPU, only one thread can be executed at once and it will behave similar to the processes. No advantage of dividing the process
+into threads in Single CPU.
+
+If we have multiple threads in the program, it won't be executed always in the same order and also it won't give the same input always.
+
+Key Terms to Concurrency:
+1) Critical Section:
+       It's a piece of code that performs operation on shared resources, usually a shared variable or data structures.
+       
+2) Race Condition:
+      It occurs Where multiple threads execute critical section simultaneously.
+      
+3) Indeterminate Program:
+      Each execution it gives different output because of the race conditions.
+
+4) Mutual Exclusion:
+        It ensures that only one thread executes the critical section at a time. If we use mutual exclusion then multiple threads can't 
+        execute the critical section at a time. Dijkstra coined this term at first.
+
+Thread Synchronization Methods:
+1) Lock:
+    Here we have the global lock variable, with the initial value of available. Threads will check the value of Lock before executing the 
+    critical section of code, If the lock is locked then it will wait until it becomes zero. Once it's available then it will execute the 
+    critical section of the code.
+    
+   Disadvantages of Lock:
+    1) Contention:
+          Which means once the thread locked and it enters the critical section, at this time other threads has to wait till it execution
+          completes and becomes available. When inside the critical section suppose if the thread dies, then others threads which are
+          waiting it has to wait for infinite times.
+    2) DeadLock:
+         Which means thread a occupied resource 1 and thread b occupied by resource 2. Thread a waiting for resource 2 to be free and thread b
+         waiting for resource 1 to be free. This issue is called Dead Lock.
+    3) Debugging:
+         If we use lock's then it's difficult to debug it.
+    4) Starvation:
+         If some low priority thread occupied by the CPU and the high priority threads has to wait for low priority thread to completes the
+         execution. It's called Starvation.
+
+2) Conditional Variable:
+    To avoid busy waiting, we have to use conditional variable. Busy waiting is the term used to refer the threads which are continously checking
+    whether the lock is available or not. To avoid this we have to use conditional variable, what actually it will do once the lock is available
+    then it will notify other threads which are waiting state that the lock is available.
+
+3) Semaphores
+    It allocated with number of semaphores, for an example if the semaphore is allocated with 3, then only three thread will access it, and each
+    thread access the semaphore it will decrement the value by 1. When the third thread enters the semaphore then the value of semaphore updated
+    it to 0. Once one thread completes the execution then the value of semaphore will be incremented by 1. Now, it will check any other threads
+    are present. If present then it use semaphore and decrement the value by 1.
+    
+    Number of threads executes in the semaphore is equal to the value of semaphore. Multiple threads can execute at a time in Semaphore it's not
+    possible in other two methods.
+    
+    
+   
+
+
+ 
+  
+

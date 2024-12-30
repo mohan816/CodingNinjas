@@ -1,0 +1,60 @@
+Free Space Management:
+   We have 16kb size physical memory, first 4kb is occupied by OS and remaining 12kb will be allocated to the processes. If the process required
+   space is not available then it will return null to the process if it's available then the memory will be allocated to the process.
+   
+Process Allocator: 
+   It will check the junk of available spaces and those spaces are adjacent to each other, then it will merge those spaces and give it us as
+   single junk of memory.
+
+Different types of allocation algorithms:  
+1) Best Fit allocation:
+    It will sort the available memory blocks based on it's sizes. Then it will allocate the process where it actually fit's (Which means exact 
+    memory or relatively lesser memory when compared to other blocks). If the process size is 90kb and we have the blocks of 80, 95, 100, 110 then
+    OS allocates the process to the 95kb memory block which is lesser when compared to 100 and 110.
+    
+2) Worst Fit Allocation:
+    In this type it will get the memory block with bigger size and allocate the process to it. Just opposite to the Worst Fit Allocation.
+   
+Note: In both best and worst fit allocation we are performing the sorting and searching because of sorting then searching the performance is slow
+
+3) First Fit Allocation:
+   Searching the list from top, once it found the memory block where it can allocate the process then it allocate there even the memory block
+   is big in size.
+  
+4) Next Fit Allocation:
+   If the last allocation happened in 3rd memory block, then it will start to look for the memory block from 3rd position onwards not from the
+   first position.
+
+5) Segregated List:
+   If we know that an app will consume how much memory in advance and allocating those memory in the OS is called Segregated List.
+   
+6) Buddy Allocation:
+    It will divide the memory into two parts until the memory the where the process can be allocated. Once the allocated memory is free it
+    will check the next adjacent block if that one is free then it will merge those.	
+
+Segmentation:
+Segmentation is a technique for the non-contiguous storage allocation. Physical memory is divided into contiguous blocks of memory of different
+sizes. This contiguous block of memory is known as a segment. The segment is stored in the form of a segment table. Segment table consists of the
+base address and the limit. A base address of the segment table contains the starting address where the process is loaded in physical memory. 
+The limit is used to specify the length of a segment.
+
+For each process the virtual address is allocated, in the virtual address we have three types of memory segment namely code, heap and stack
+Usually in the physical memory all the above memory segments are stored in single partitioned memory block. But in the segmentation each 
+memory block from the virtual address are stored in non-contiguous memory location. This process is called Segmentation. Those non-contiguous 
+blocks are called segments.
+
+Causes of Segmentation Fault:
+-> When a process attempts to access a non-existent memory address.
+-> When a process attempts to access an illegal address or memory, the program does not have rights to access or is beyond 
+   the bounds of space assigned to the process.
+-> When a process attempts to write the read-only memory.
+
+Pros & cons of segmentation:
+1) No internal fragmentation
+2) Multi-programming is allowed
+3) External fragmentation is still exists.
+   
+
+  
+
+    
