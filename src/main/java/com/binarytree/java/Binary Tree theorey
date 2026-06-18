@@ -1,1 +1,4 @@
-
+1) When a tree is having root node and the root node can consists of zero, one or max two nodes. Then we call it as Binary tree.
+2) If a node doesn't contain any childs then we call it as leaf node.
+3) Right node of a root node is called as sibling for the left node of the root node and vice versa
+4) If a node is having parent or grand parent or more, then all the upper level nodes are called Ancestors.
