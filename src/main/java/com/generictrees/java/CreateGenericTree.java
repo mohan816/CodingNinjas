@@ -33,12 +33,27 @@ public class CreateGenericTree {
 	 *    recursion and print the data
 	 */
 	public static void printGenericTree(GenericTree<Integer> root) {
+		
+		//special case not base case
 		if(root == null)
 			return;
 		System.out.println(root.data);
+		//here itself base case is handled.
 		for(int i = 0; i < root.children.size(); i++) {
 			printGenericTree(root.children.get(i));
 		}
+	}
+	
+	public static int countNodes(GenericTree<Integer> root) {
+		if(root == null)
+			return 0;
+		int total = 1;
+		for(int i = 0; i < root.children.size(); i++) {
+			int smallOutput = countNodes(root.children.get(i));
+			total = total + smallOutput;
+		}
+		return total;
+	    
 	}
 	/*
 	 * 1) Create a queue, and add the root to it.
@@ -69,6 +84,6 @@ public class CreateGenericTree {
 	
 	public static void main(String[] args) {
 		GenericTree<Integer> root = createGenericTree();
-		printTreeLevelwise(root);
+		System.out.print(countNodes(root));
 	}
 }

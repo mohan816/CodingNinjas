@@ -22,10 +22,29 @@ public class Sort10 {
 			}
 		}
 	}
+	
+	//optimized approach
+	public static void optimizedApproach(int[] arr) {
+		int start = 0, end = 0;
+		while(end < arr.length) {
+			if(arr[end] == 1) {
+				int temp = arr[end];
+				arr[end] = arr[start];
+				arr[start] = temp;
+				end++;
+				start++;
+			}
+			else
+				end++;
+		}
+		
+	}
+	
+	
 
 	public static void main(String[] args) {
 		int[] arr = {0,1,1,0,1,0};
-		sort10(arr);
+		optimizedApproach(arr);
 		for(int i = 0; i < arr.length; i++) {
 			System.out.print(arr[i]+" ");
 		}

@@ -69,7 +69,7 @@ public class MaxPriorityQueueImplementation<T> {
     	  while(leftChildIndex < heap.size()) {
     		  if(heap.get(maxIndex).priority < heap.get(leftChildIndex).priority)
     			      maxIndex = leftChildIndex;
-    		  if(heap.get(maxIndex).priority < heap.get(rightChildIndex).priority)
+    		  if(rightChildIndex < heap.size() && heap.get(maxIndex).priority < heap.get(rightChildIndex).priority)
     			      maxIndex = rightChildIndex;
     		  if(parentIndex == maxIndex)
     			  return max;

@@ -1,0 +1,26 @@
+What is the Tries:
+   It is a data structure used in Dictionary, to store less number of words (ex:1000), We can use HashMap but if we want to store millions
+   of words then we have to go with tries because there is a memory constraints.
+   
+   In Tries data structure if we have common characters between the words then they share the common memory. Example (do, done, dont)
+   Here d & o stored in a memory and shared across all three examples.
+   
+ Tries Implementation:
+     To implement TrieNode, we required three variables 1) To store the data of char type 2) To check whether the node isTerminal
+     3) Each node will have a Trie Node Array of size 26, by default all the node values are null.
+     
+HashMap vs Tries:
+   1) When comes to time complexity both of them are same, but when comes to space HashMap consumes more space compared to trie because 
+for each word in HashMap, different memory will be allocated but in case of trie memory will be shared across the words.
+
+Have to check:
+1) Compressed tries 2) Prefix and Suffix tries
+
+We can implement Huffman coding using below structures:
+   Need for Huffman coding is to reduce the memory required to store the word
+   Ex: abcdef -> To store all the characters it requires 48 bits of memory if use Huffman coding it will be half less than 48 bits.
+   
+ 1) HashMap -> To store each character and it's frequency
+ 2) BinaryTree -> Each parent node will have left and right child
+ 3) Min Priority Queue/Min Heap -> To get the minimum value from the heap
+ 4) HashMap -> To store the characters and it's binary code(HashMap<Character, Binary>)

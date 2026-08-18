@@ -1,0 +1,7 @@
+Generic Tree:
+  1) In this data structure, each node have multiple nodes when come to binary or binary search tree each node contains at most 2 nodes
+      left and right child. But here in Generic Tree, each node contains multiple nodes so there is no concept of left and right child.
+      
+  2) Here the first node or top node is called parent node and the Children nodes without having the child are called leaf node.
+  
+ 
